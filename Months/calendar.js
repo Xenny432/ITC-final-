@@ -27,6 +27,23 @@ function syncActivityHighlights() {
 
 syncActivityHighlights();
 
+function ensureBackToContentButton() {
+  if (!document.querySelector(".days") && !document.querySelector(".month")) return;
+
+  const titleBar = document.querySelector(".title");
+  if (!titleBar || titleBar.querySelector(".back-content-btn")) return;
+
+  const backLink = document.createElement("a");
+  backLink.href = "../content.html";
+  backLink.className = "back-content-btn";
+  backLink.setAttribute("aria-label", "Back to home page");
+  backLink.innerHTML = "&#8592; Home Page";
+
+  titleBar.prepend(backLink);
+}
+
+ensureBackToContentButton();
+
 function closeActivityModal() {
   if (!modal) return;
   modal.hidden = true;
