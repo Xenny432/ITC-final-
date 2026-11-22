@@ -2,8 +2,12 @@ body {font-family: Nunito;}
 a {text-decoration: none; color: #1d1a15;}
 
 .title h1{
-  font-size: 20px;
+  font-size: 1.7rem;
+  font-weight: 900;
+
   color: #1d1a15;
+  padding: 0;
+  margin: 0;
 }
 
 .title h2{
@@ -46,6 +50,7 @@ a {text-decoration: none; color: #1d1a15;}
 
 .three-box-ui {
   margin: 3vw auto;
+  margin-bottom: 5vh;
 
   display: flex;
   width: fit-content;
@@ -94,23 +99,49 @@ a {text-decoration: none; color: #1d1a15;}
 
   margin: 0 1vw;
   margin-bottom: 1vw;
-  background-color: #74925f; 
-  border-radius: 3rem;
+  background-color: #ffbe81; 
+  border-radius: 2rem;
   width: auto;
-  height: 5vh;
+  height: 4.5vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.progress-board {
+.details-of-calendar {
+  display: flex;
+
+  gap: 1.5vw;
+}
+
+.legend {
   background-color: #ffffff;
   height: 20vh;
-  width: auto;
+  width: 30%;
   box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
 
   border-radius: 2rem;
+}
+
+.monthly-overview {
+  background-color: #ffffff;
+
+  height: 20vh;
+  flex: 1;
+
+  box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
+
+  border-radius: 2rem;
+}
+
+.calendar-detail-titles {
+  font-size: 1.3rem; 
+  color: #1d1a15; 
+  display: inline-block;
+  margin-left: 1vw; 
+  margin-top: 1vh; 
+  font-weight: bold;
 }
 
 .announcement-board {
@@ -118,6 +149,35 @@ a {text-decoration: none; color: #1d1a15;}
   width: 30vw;
   height: auto;
   box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
+
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.announcement-title {
+  width: auto;
+  height: 4.5vh;
+  font-weight: bold;
+
+  margin: 2vh 1vw;
+
+  border-radius: 2rem;
+
+  background-color: #ffbe81;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-content {
+  flex: 1;
+  width: auto;
+  background-color: #f8ece0;
+
+  margin: 0 1vw 2vh 1vw;
 
   border-radius: 2rem;
 }
@@ -303,13 +363,13 @@ html,body {
   width: 9.5vw;
   height: 11vh;
 
-  box-shadow: 0.3rem 0.4rem 0.4rem rgba(180, 95, 25, 0.10);
+  box-shadow: 0.3rem 0.4rem 0.5rem rgba(153, 71, 4, 0.2);
 
   background-color: #FFE4C8;
 
   border-radius: 15px;
   box-sizing: border-box;
-  min-height: 100px;
+  min-height: 120px;
   margin: 0;
   padding: 0;
 
