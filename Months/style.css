@@ -1,9 +1,9 @@
-ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
-a {text-decoration: none;}
+body {font-family: Nunito;}
+a {text-decoration: none; color: #1d1a15;}
 
 .title h1{
   font-size: 20px;
+  color: #1d1a15;
 }
 
 .title h2{
@@ -17,7 +17,7 @@ a {text-decoration: none;}
   align-items: center;
   padding: 5px 5px;
   height: 50px;
-  background: #ff9317;
+  background: #F28C38;
   text-align: center;
 }
 
@@ -25,6 +25,12 @@ a {text-decoration: none;}
   text-decoration: none;
   font-size: 20px;
   color: white;
+}
+
+.content-sem-header {
+  color: #38200E;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 /* Month header */
@@ -36,19 +42,55 @@ a {text-decoration: none;}
   text-align: center;
 }
 
-/* Month list */
-.month ul {
-  margin: 0;
-  padding: 0;
+/* div containers */
+
+.three-box-ui {
+  margin: 2vw auto;
+
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+
+  gap: 1.5vw
 }
 
-.month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+.main-calendar-div {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  gap: 1.5vw;
 }
 
+.month-portion {
+  width: 65vw;
+  height: auto;
+  background-color: #ffffff;
+  box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
+
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  border-radius: 2rem;
+}
+
+.upcoming-events {
+  background-color: #ffffff;
+  height: 15vh;
+  width: auto;
+  box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
+
+  border-radius: 2rem;
+}
+
+.notes-section {
+  background-color: #ffffff;
+  width: 30vw;
+  height: auto;
+  box-shadow: 0.3rem 0.4rem 1rem rgba(180, 95, 25, 0.15);
+
+  border-radius: 2rem;
+}
 
 /* Previous button inside month header */
 .month .prev a{
@@ -67,9 +109,9 @@ a {text-decoration: none;}
 
 /* Prev button hover effect */
 .prev a:hover {
-            background-color: #0056b3; /* Darkens the button background */
-            transform: scale(1.05);     /* Scales the button up slightly */
-        }
+  background-color: #0056b3; /* Darkens the button background */
+  transform: scale(1.05);     /* Scales the button up slightly */
+}
 
 /* Next button */
 .month .next a{
@@ -87,9 +129,9 @@ a {text-decoration: none;}
 
 /* Next button hover effect */
 .next a:hover {
-            background-color: #0056b3; /* Darkens the button background */
-            transform: scale(1.05);     /* Scales the button up slightly */
-        }
+  background-color: #0056b3; /* Darkens the button background */
+  transform: scale(1.05);     /* Scales the button up slightly */
+}
 
 /* Weekdays (Sun-Sat) */
 .weekdays {
@@ -206,7 +248,7 @@ display: flex;
 }
 
 /*BACKGROUND COLOR OF THE PAGE*/
-:root{--bg:#ffe3c9;color-scheme:light}
+:root{--bg:#FFF6EB;color-scheme:light}
 html,body {
   height:100%;
   margin:0;
@@ -214,67 +256,53 @@ html,body {
 }
 
 /*BUTTONS*/
-.months_this {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
-  gap: 15px;
-  padding-right: 25px;
-}
-.rectangle {
-  width: 200px;
-  height: 50px;
-  background-color: lightblue;
-  border: 2px solid black;
-  border-radius: 15px;
+.months-grid {
   display: flex;
-  position: relative;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+  gap: 1vw;
+}
+
+.rectangle {
+  width: 9.5vw;
+  height: 11vh;
+
+  box-shadow: 0.3rem 0.4rem 0.8rem rgba(180, 95, 25, 0.15);
+
+  background-color: #FFE4C8;
+
+  border-radius: 15px;
   box-sizing: border-box;
   min-height: 100px;
-  padding: 10px;
   margin: 0;
-  background-color: lightblue;
-  border: 2px solid black;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 0;
+
+  list-style: none;
+
   font-size: 20px;
+
+  transition: all 0.2s ease;
 }
-.months_this .rectangle > nav {
-  display: flex;
-  position: absolute;
-  inset: -2px;
+
+.rectangle:hover {
+  background-color: #FFC896;
+  transform: translateY(-3px);
 }
-.months_this .rectangle > nav > a {
+
+.rectangle a{
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: inherit;
 }
 
-.months_next {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: repeat(3, auto);
-  gap: 15px;
-  padding-right: 25px;
-}
-.months_next .rectangle > nav {
-  display: flex;
-  position: absolute;
-  inset: -2px;
-}
-.months_next .rectangle > nav > a {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: inherit;
-}
 #homepage{
   height:100vh;
   display:flex;
