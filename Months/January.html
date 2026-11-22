@@ -72,7 +72,13 @@
   <span class="day-cell"><button type="button" aria-describedby="day-info-january-31">31</button><span class="tooltip" id="day-info-january-31" role="tooltip">January 31, 2026</span></span>
 </div>
 
-<p id="selected-date-info" class="selected-date-info" aria-live="polite" hidden></p>
+<div id="activity-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-card">
+    <button type="button" class="modal-close-btn" id ="close-activity-modal" aria-label="Close pop-up">&times;</button>
+    <h3 id="modal-title" class="modal-heading">Scheduled Activity</h3>
+    <div id="activity-modal-body" class="modal-body"></div>
+  </div>
+</div>
 
 </html>
 

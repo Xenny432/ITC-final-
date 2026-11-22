@@ -22,7 +22,7 @@ awesome/6.0.0/css/all.min.css">
             <a href="May.html">&#10095;</a>
         </nav></li>
 <!--Here is the name of the Month-->
-    <li>April<br><span style="font-size:18px">2026</span></li>
+    <li>April<br><span style="font-size:18px">2027</span></li>
   </div>
 </div>
 
@@ -61,6 +61,7 @@ awesome/6.0.0/css/all.min.css">
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-19">19</button><span class="tooltip" id="day-info-april-19" role="tooltip">April 19, 2026</span></span>
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-20">20</button><span class="tooltip" id="day-info-april-20" role="tooltip">April 20, 2026</span></span>
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-21">21</button><span class="tooltip" id="day-info-april-21" role="tooltip">April 21, 2026</span></span>
+  <span class="day-cell"><button type="button" aria-describedby="day-info-april-22">22</button><span class="tooltip" id="day-info-april-22" role="tooltip">April 22, 2026</span></span>
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-23">23</button><span class="tooltip" id="day-info-april-23" role="tooltip">April 23, 2026</span></span>
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-24">24</button><span class="tooltip" id="day-info-april-24" role="tooltip">April 24, 2026</span></span>
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-25">25</button><span class="tooltip" id="day-info-april-25" role="tooltip">April 25, 2026</span></span>
@@ -71,7 +72,13 @@ awesome/6.0.0/css/all.min.css">
   <span class="day-cell"><button type="button" aria-describedby="day-info-april-30">30</button><span class="tooltip" id="day-info-april-30" role="tooltip">April 30, 2026</span></span>
 </div>
 
-<p id="selected-date-info" class="selected-date-info" aria-live="polite" hidden></p>
+<div id="activity-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-card">
+    <button type="button" class="modal-close-btn" id ="close-activity-modal" aria-label="Close pop-up">&times;</button>
+    <h3 id="modal-title" class="modal-heading">Scheduled Activity</h3>
+    <div id="activity-modal-body" class="modal-body"></div>
+  </div>
+</div>
 
 </html>
 
