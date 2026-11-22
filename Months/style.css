@@ -815,3 +815,276 @@ body:has(.month) {
 .weekdays li {
   border: 1.5px solid rgba(153, 71, 4, 0.22);
 }
+
+/* adjust font size of month and year*/
+.month > div,
+.month div > :not(.prev):not(.next) {
+  font-size: clamp(2.3rem, 5.2vh, 3.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow:
+    0 2px 0 rgba(15, 118, 98, 0.92),
+    0 4px 0 rgba(10, 82, 68, 0.88),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.month span {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: clamp(1.2rem, 2.5vh, 1.75rem) !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #f0fdf9;
+  text-shadow:
+    0 1.5px 0 rgba(15, 118, 98, 0.92),
+    0 3px 0 rgba(10, 82, 68, 0.88),
+    0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* change colors of the calendar */
+body:has(.month),
+.weekdays,
+.days {
+  background-color: #fff8f0 !important;
+  color: #38200e;
+}
+
+.month {
+  background: linear-gradient(135deg, #ffd4a8 0%, #ffc896 55%, #ffb374 100%) !important;
+  border-bottom: 1.5px solid rgba(153, 71, 4, 0.2);
+}
+
+.month > div,
+.month div > :not(.prev):not(.next) {
+  color: #38200e;
+  text-shadow:
+    0 2px 0 rgba(255, 228, 200, 0.95),
+    0 4px 0 rgba(217, 130, 59, 0.45),
+    0 7px 14px rgba(56, 32, 14, 0.18);
+}
+
+.month span {
+  color: #5c3518;
+  text-shadow:
+    0 1.5px 0 rgba(255, 228, 200, 0.9),
+    0 3px 0 rgba(217, 130, 59, 0.35),
+    0 4px 10px rgba(56, 32, 14, 0.14);
+}
+
+.month .prev,
+.month .next,
+.month button.prev,
+.month button.next,
+.month a.prev,
+.month a.next {
+  background-color: #ffe4c8 !important;
+  color: #38200e !important;
+  border: 1.5px solid rgba(153, 71, 4, 0.32) !important;
+  border-radius: 12px;
+  box-shadow: 0.15rem 0.25rem 0.4rem rgba(153, 71, 4, 0.18);
+  transition: background-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease;
+}
+
+.month .prev:hover,
+.month .next:hover,
+.month button.prev:hover,
+.month button.next:hover,
+.month a.prev:hover,
+.month a.next:hover {
+  background-color: #ffbe81 !important;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0.25rem 0.35rem 0.55rem rgba(153, 71, 4, 0.25);
+}
+
+/* changing color of month and year banner */
+.month {
+  background: linear-gradient(135deg, #478995 0%, #3E7B86 55%, #326670 100%) !important;
+  border-bottom: 1.5px solid #2A5B64;
+}
+
+.month > div,
+.month div > :not(.prev):not(.next) {
+  color: #ffffff !important;
+  text-shadow:
+    0 2px 0 #26535b,
+    0 4px 0 #1c3f45,
+    0 7px 14px rgba(0, 0, 0, 0.28) !important;
+}
+
+.month span {
+  color: #e6f4f6 !important;
+  text-shadow:
+    0 1.5px 0 #26535b,
+    0 3px 0 #1c3f45,
+    0 5px 10px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Keep outer .prev/.next wrapper transparent so there is no double box */
+.month .prev,
+.month .next {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* change warm peach Month & Year banner */
+.month {
+  background: linear-gradient(135deg, #ffd4a8 0%, #ffc896 55%, #ffb374 100%) !important;
+  border-bottom: 1.5px solid rgba(153, 71, 4, 0.2);
+}
+
+.month > div,
+.month div > :not(.prev):not(.next) {
+  color: #38200e !important;
+  text-shadow:
+    0 2px 0 rgba(255, 228, 200, 0.95),
+    0 4px 0 rgba(217, 130, 59, 0.45),
+    0 7px 14px rgba(56, 32, 14, 0.18) !important;
+}
+
+.month span {
+  color: #5c3518 !important;
+  text-shadow:
+    0 1.5px 0 rgba(255, 228, 200, 0.9),
+    0 3px 0 rgba(217, 130, 59, 0.35),
+    0 4px 10px rgba(56, 32, 14, 0.14) !important;
+}
+
+/* remove wrapper box from left and right button*/
+.month .prev,
+.month .next {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* style left and right button*/
+.month .prev button,
+.month .prev a,
+.month .next button,
+.month .next a,
+.month button.prev,
+.month button.next,
+.month a.prev,
+.month a.next,
+.month .prev,
+.month .next {
+  background-color: #ffad60 !important;
+  color: #38200e !important;
+  border: 1.5px solid rgba(153, 71, 4, 0.35) !important;
+  border-radius: 12px !important;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.15rem 0.25rem 0.4rem rgba(153, 71, 4, 0.2) !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease !important;
+}
+
+/* adjust buttons again*/
+.month .prev:has(button),
+.month .prev:has(a),
+.month .next:has(button),
+.month .next:has(a) {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto;
+  height: auto;
+}
+
+.month .prev button:hover,
+.month .prev a:hover,
+.month .next button:hover,
+.month .next a:hover,
+.month button.prev:hover,
+.month button.next:hover,
+.month a.prev:hover,
+.month a.next:hover,
+.month .prev:not(:has(button)):not(:has(a)):hover,
+.month .next:not(:has(button)):not(:has(a)):hover {
+  background-color: #ffe4c8 !important;
+  color: #1d1a15 !important;
+  transform: translateY(-2px) scale(1.06) !important;
+  box-shadow: 0.2rem 0.35rem 0.55rem rgba(153, 71, 4, 0.28) !important;
+}
+
+/* Keep < on the left and > on the right, just slightly inset from the edges */
+.month {
+  position: relative;
+}
+
+.month .prev,
+.month .prev button,
+.month .prev a,
+.month button.prev,
+.month a.prev {
+  position: absolute !important;
+  left: clamp(12px, 3vw, 36px) !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: #3E7B86 !important;
+  color: #FFF8F0 !important;
+  border-color: #2A5B64 !important;
+}
+
+.month .next,
+.month .next button,
+.month .next a,
+.month button.next,
+.month a.next {
+  position: absolute !important;
+  right: clamp(12px, 3vw, 36px) !important;
+  left: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: #3E7B86 !important;
+  color: #FFF8F0 !important;
+  border-color: #2A5B64 !important;
+}
+
+.month .prev:hover,
+.month .prev button:hover,
+.month .prev a:hover,
+.month button.prev:hover,
+.month a.prev:hover {
+  background-color: #2E646E !important;
+  color: #FFFFFF !important;
+  transform: translateY(-50%) scale(1.06) !important;
+}
+
+.month .next:hover,
+.month .next button:hover,
+.month .next a:hover,
+.month button.next:hover,
+.month a.next:hover {
+  background-color: #2E646E !important;
+  color: #FFFFFF !important;
+  transform: translateY(-50%) scale(1.06) !important;
+}
+
+/* Keep the arrow glyph itself crisp with no stacked 3D shadow */
+.month .prev,
+.month .next,
+.month .prev *,
+.month .next *,
+.month button.prev,
+.month button.next,
+.month a.prev,
+.month a.next {
+  text-shadow: none !important;
+  filter: none !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
