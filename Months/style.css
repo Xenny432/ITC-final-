@@ -59,7 +59,12 @@ a {text-decoration: none; color: #1d1a15;}
   gap: 1.5vw
 }
 
+.month li {
+  list-style: none;
+}
+
 .month ul li:not(.prev):not(.next) {
+  list-style: none;
   text-align: center;
 }
 
