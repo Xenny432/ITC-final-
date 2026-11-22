@@ -99,8 +99,9 @@ a {text-decoration: none; color: #1d1a15;}
 }
 
 .calendar-title {
-  font-size: 1.5rem; 
   font-weight: bold; 
+  color: #1d1a15;
+  font-size: 16px;
 
   margin: 0 1vw;
   margin-bottom: 1vw;
@@ -112,6 +113,13 @@ a {text-decoration: none; color: #1d1a15;}
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .calendar-title {
+    font-size: clamp(0.8rem, 4.6vw, 1.8rem);
+    height: 4vh;
+  }
 }
 
 .details-of-calendar {
@@ -175,6 +183,13 @@ a {text-decoration: none; color: #1d1a15;}
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.announcement-title span {
+  color: #1d1a15;
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-align: center;
 }
 
 .announcement-content {
@@ -420,14 +435,14 @@ html,body {
   color:white;
 }
 
-.hero-content h1{
+.opening-content h1{
   font-size:clamp(48px, 10vw, 90px);
   font-weight:800;
   letter-spacing:2px;
   margin-bottom:15px;
 }
 
-.hero-content p{
+.opening-content p{
   font-size:clamp(18px, 3vw, 24px);
   max-width:700px;
   line-height:1.5;
@@ -474,7 +489,92 @@ body.fade-out{
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+  .three-box-ui {
+    width: auto;
+    margin: 14px;
+    padding-bottom: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .main-calendar-div {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .month-portion {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 12px;
+  }
+
+  .calendar-detail-titles {
+    font-size: clamp(0.9rem, 4vw, 1.15rem);
+  }
+
+  .announcement-title span {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  .months-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  .rectangle {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: 78px;
+    min-height: 0;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .rectangle a {
+    box-sizing: border-box;
+    padding: 8px;
+    text-align: center;
+    overflow-wrap: normal;
+  }
+
+  .months-grid > .rectangle:nth-child(1),
+  .months-grid > .rectangle:nth-child(9) {
+    grid-column: 1 / -1;
+    height: 52px;
+    font-size: 16px;
+  }
+
+  .months-grid > .rectangle:nth-child(8),
+  .months-grid > .rectangle:nth-child(14) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 10px) / 2);
+  }
+
+  .details-of-calendar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .legend,
+  .monthly-overview {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+  }
+
+  .announcement-board {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 240px;
+  }
+
   .title {
     height: auto;
     min-height: 50px;
@@ -536,7 +636,7 @@ body.fade-out{
     padding: 24px 16px;
   }
 
-  .hero-content p {
+  .opening-content p {
     margin-left: auto;
     margin-right: auto;
   }
@@ -547,14 +647,14 @@ body.fade-out{
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 600px) {
   .months_this,
   .months_next {
     grid-template-columns: 1fr;
   }
 
-  .hero-content h1 {
-    font-size: 42px;
+  .opening-content h1 {
+    font-size: clamp(32px, 12vw, 42px);
   }
 
   .days button {
@@ -609,7 +709,7 @@ body:has(.month) {
   min-height: 0;
   padding: 6px 10px 10px;
   box-sizing: border-box;
-  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
   align-content: stretch;
 }
 
@@ -623,6 +723,7 @@ body:has(.month) {
 }
 
 .days button {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -783,7 +884,7 @@ body:has(.month) {
   position: relative;
 }
 
-/* Exact gap divider lines aligned to the 7x5 grid */
+/* Exact gap divider lines aligned to the 7-column grid */
 .weekdays,
 .days {
   position: relative;
@@ -814,6 +915,21 @@ body:has(.month) {
 
 .weekdays li {
   border: 1.5px solid rgba(153, 71, 4, 0.22);
+}
+
+@media (max-width: 600px) {
+  .weekdays,
+  .days {
+    gap: clamp(4px, 2vw, 8px);
+    padding-right: clamp(4px, 3vw, 10px);
+    padding-left: clamp(4px, 3vw, 10px);
+  }
+
+  .weekdays li {
+    padding-right: 1px;
+    padding-left: 1px;
+    font-size: clamp(0.65rem, 3vw, 0.85rem);
+  }
 }
 
 /* adjust font size of month and year*/
