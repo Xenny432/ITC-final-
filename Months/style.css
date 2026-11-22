@@ -50,7 +50,7 @@ a {text-decoration: none; color: #1d1a15;}
 
 .three-box-ui {
   margin: 3vw auto;
-  margin-bottom: 5vh;
+  padding-bottom: 6vh;
 
   display: flex;
   width: fit-content;
