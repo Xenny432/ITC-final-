@@ -702,3 +702,116 @@ body:has(.month) {
   background: #ffc896;
   transform: scale(1.06);
 }
+
+/* Match main-page .rectangle card style on calendar dates */
+.days {
+  gap: 10px;
+  padding: 10px 14px 14px;
+}
+
+.days > .day-cell {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days button {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 6px;
+  border: none;
+  border-radius: 15px;
+  background-color: #FFE4C8;
+  color: #38200E;
+  font-size: clamp(0.95rem, 1.8vh, 1.25rem);
+  font-weight: 800;
+  box-shadow: 0.2rem 0.3rem 0.45rem rgba(153, 71, 4, 0.16);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.days button:hover,
+.days button:focus-visible {
+  background-color: #FFC896;
+  color: #1d1a15;
+  outline: none;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0.3rem 0.5rem 0.75rem rgba(153, 71, 4, 0.25);
+}
+
+.days button.selected,
+.days button[aria-pressed="true"] {
+  background-color: #ffbe81;
+  color: #1d1a15;
+  box-shadow: 0 0 0 2px #F28C38, 0.3rem 0.45rem 0.7rem rgba(153, 71, 4, 0.22);
+}
+
+/* Weekday header cards (no hover lift/color shift) */
+.weekdays {
+  gap: 10px;
+  padding: 8px 14px 10px;
+  background-color: #eee;
+}
+
+.weekdays li {
+  width: 100%;
+  height: 100%;
+  min-height: 38px;
+  padding: 6px 4px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: #FFE4C8;
+  color: #38200E;
+  font-size: clamp(0.85rem, 1.5vh, 1.05rem);
+  font-weight: 800;
+  box-shadow: 0.2rem 0.3rem 0.45rem rgba(153, 71, 4, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Grid lines between columns and rows in the gaps */
+.weekdays,
+.days {
+  position: relative;
+}
+
+/* Exact gap divider lines aligned to the 7x5 grid */
+.weekdays,
+.days {
+  position: relative;
+  gap: 10px;
+}
+
+/* Support 5 or 6 rows cleanly on any month */
+.days {
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+/* Crisp divider lines centered inside the 10px gaps */
+.weekdays,
+.days {
+  gap: 10px;
+  background-color: #eee;
+}
+
+/* Clean warm outline on date buttons and weekday headers */
+.days button {
+  border: 1.5px solid rgba(153, 71, 4, 0.28);
+}
+
+.days button:hover,
+.days button:focus-visible {
+  border-color: rgba(153, 71, 4, 0.55);
+}
+
+.weekdays li {
+  border: 1.5px solid rgba(153, 71, 4, 0.22);
+}
