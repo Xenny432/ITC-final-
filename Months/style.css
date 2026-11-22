@@ -54,6 +54,20 @@ a {text-decoration: none; color: #1d1a15;}
   gap: 1.5vw
 }
 
+.month ul li:not(.prev):not(.next) {
+  text-align: center;
+}
+
+.month .prev,
+.month .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.month .prev { left: 0; }
+.month .next { right: 0; }
+
 .main-calendar-div {
   display: flex;
   flex-direction: column;
@@ -95,7 +109,6 @@ a {text-decoration: none; color: #1d1a15;}
 /* Previous button inside month header */
 .month .prev a{
   display: block;
-  float: left;
   background-color: #007BFF;
   color: white;
   padding: 11px 22px;
@@ -115,7 +128,6 @@ a {text-decoration: none; color: #1d1a15;}
 
 /* Next button */
 .month .next a{
-  float: right;
   background-color: #007BFF;
   color: white;
   padding: 11px 22px;
@@ -157,8 +169,9 @@ a {text-decoration: none; color: #1d1a15;}
 
 /*clickable area to access button on days and how it looks*/
 .days button {
-  width: 100%;
-  padding: 8px 0;
+  width: min(44px, 100%);
+  min-height: 36px;
+  padding: 8px 2px;
   border: 0;
   border-radius: 4px;
   background: transparent;
@@ -179,6 +192,9 @@ a {text-decoration: none; color: #1d1a15;}
 .days > .day-cell {
   position: relative;
   width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 /*makes info pop up during hover*/
@@ -304,7 +320,9 @@ html,body {
 }
 
 #homepage{
-  height:100vh;
+  min-height:100vh;
+  min-height:100svh;
+  padding:24px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -320,14 +338,16 @@ html,body {
 }
 
 .hero-content h1{
-  font-size:90px;
+  font-size:clamp(48px, 10vw, 90px);
   font-weight:800;
   letter-spacing:2px;
   margin-bottom:15px;
 }
 
 .hero-content p{
-  font-size:24px;
+  font-size:clamp(18px, 3vw, 24px);
+  max-width:700px;
+  line-height:1.5;
   color:#fff4e6;
   margin-bottom:35px;
 }
@@ -349,10 +369,7 @@ html,body {
 .enter-btn:hover{
   background:#ff7a00;
   transform:translateY(-3px);
-  box-shadow:0 1
-  body;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 /* for the fade out transition */
@@ -373,3 +390,93 @@ body.fade-out{
         opacity:1;
     }
 }
+
+@media (max-width: 700px) {
+  .title {
+    height: auto;
+    min-height: 50px;
+  }
+
+  .title a,
+  .title h1,
+  .title h2 {
+    font-size: 18px;
+  }
+
+  .month {
+    padding: 50px 12px 30px;
+  }
+
+  .month ul li {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .month .prev a,
+  .month .next a {
+    padding: 10px 12px;
+  }
+
+  .weekdays,
+  .days {
+    padding: 8px 4px;
+  }
+
+  .weekdays li {
+    font-size: 12px;
+  }
+
+  .days button {
+    min-height: 40px;
+  }
+
+  .days .tooltip {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    max-width: calc(100vw - 32px);
+    white-space: normal;
+  }
+
+  .months_this,
+  .months_next {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .rectangle {
+    min-height: 78px;
+  }
+
+  #homepage {
+    padding: 24px 16px;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .enter-btn {
+    width: min(240px, 100%);
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .months_this,
+  .months_next {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .days button {
+    min-height: 38px;
+    font-size: 11px;
+  }
+}
+
