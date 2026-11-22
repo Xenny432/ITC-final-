@@ -17,7 +17,7 @@ document.querySelector(".days")?.addEventListener("click", (event) => {
     button.classList.remove("selected");
     selectedDayButton = null;
     selectedDateInfo.hidden = true;
-    selectedDateInfo.textContent = "";
+    selectedDateInfo.innerHTML = "";
     return;
   }
 
@@ -29,6 +29,6 @@ document.querySelector(".days")?.addEventListener("click", (event) => {
   selectedDayButton = button;
   button.setAttribute("aria-pressed", "true");
   button.classList.add("selected");
-  selectedDateInfo.textContent = button.parentElement.querySelector(".tooltip").textContent;
+  selectedDateInfo.innerHTML = button.parentElement.querySelector(".tooltip").innerHTML;
   selectedDateInfo.hidden = false;
 });
