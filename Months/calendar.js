@@ -32,4 +32,3 @@ document.querySelector(".days")?.addEventListener("click", (event) => {
   selectedDateInfo.textContent = button.parentElement.querySelector(".tooltip").textContent;
   selectedDateInfo.hidden = false;
 });
-
