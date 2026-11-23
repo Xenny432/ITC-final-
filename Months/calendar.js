@@ -7,6 +7,26 @@ document.querySelectorAll(".day-cell button").forEach((button) => {
   button.setAttribute("aria-pressed", "false");
 });
 
+function syncActivityHighlights() {
+  document.querySelectorAll(".day-cell").forEach((cell) => {
+    const button = cell.querySelector("button");
+    const tooltip = cell.querySelector(".tooltip");
+    if (!button || !tooltip) return;
+
+    // A day has a scheduled activity if its tooltip contains <br> or extra text after the date
+    const hasBr = Boolean(tooltip.querySelector("br"));
+    const lines = tooltip.innerText
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    const hasActivity = hasBr || lines.length > 1 || button.classList.contains("has-activity");
+
+    button.classList.toggle("has-activity", hasActivity);
+  });
+}
+
+syncActivityHighlights();
+
 function closeActivityModal() {
   if (!modal) return;
   modal.hidden = true;

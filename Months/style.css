@@ -837,7 +837,7 @@ body:has(.month) {
   transform: scale(1.06);
 }
 
-/* Match main-page .rectangle card style on calendar dates */
+/* rectangle calendar dates */
 .days {
   gap: 10px;
   padding: 10px 14px 14px;
@@ -1236,4 +1236,27 @@ body:has(.month),
   filter: none !important;
   font-weight: 700 !important;
   line-height: 1 !important;
+}
+
+/* Highlight calendar dates that have scheduled activities */
+.days button.has-activity,
+.days button.has-event,
+.days button[data-has-event="true"] {
+  background-color: #c68866 !important;
+  color: #fffaf5 !important;
+  border-color: #8f5638 !important;
+  box-shadow: 0.22rem 0.35rem 0.55rem rgba(110, 56, 24, 0.28);
+}
+
+.days button.has-activity:hover,
+.days button.has-event:hover,
+.days button[data-has-event="true"]:hover,
+.days button.has-activity:focus-visible,
+.days button.has-event:focus-visible,
+.days button[data-has-event="true"]:focus-visible {
+  background-color: #b57452 !important;
+  color: #ffffff !important;
+  border-color: #784429 !important;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0.3rem 0.5rem 0.75rem rgba(110, 56, 24, 0.36);
 }
