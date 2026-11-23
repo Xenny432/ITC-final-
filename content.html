@@ -40,15 +40,36 @@
             </div>
         </div>
 
-        <div class="details-of-calendar">
-            <div class="legend">
-                <span class="calendar-detail-titles">Legend</span>
-            </div>
-            <div class="monthly-overview">
-                <span class="calendar-detail-titles">Monthly Overview</span>
-            </div>
-
+<div class="details-of-calendar">
+    <div class="calendar-summary-card">
+        <div class="summary-section legend-section">
+            <span class="calendar-detail-titles">Legend</span>
+            <ul class="legend-list">
+                <li><span class="legend-swatch swatch-activity"></span> Scheduled Activity</li>
+                <li><span class="legend-swatch swatch-semester"></span> Semester Marker</li>
+                <li><span class="legend-swatch swatch-day"></span> Regular Day</li>
+            </ul>
         </div>
+
+        <div class="semester-progress-box" data-start="2026-07-20" data-end="2026-11-27">
+            <div class="semester-progress-header">
+                <span class="semester-progress-title">1st Semester Progress Bar</span>
+                <span class="semester-progress-value">0%</span>
+            </div>
+            <div
+                class="semester-progress-track"
+                role="progressbar"
+                aria-label="1st Semester Progress Bar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div class="semester-progress-fill" style="width: 0%;"></div>
+            </div>
+            <p class="semester-progress-subtext">Jul 20, 2026 – Nov 27, 2026</p>
+        </div>
+    </div>
+</div>
 
     </div>
     <div class="announcement-board">

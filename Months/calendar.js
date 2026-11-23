@@ -96,3 +96,71 @@ document.addEventListener("keydown", (event) => {
     closeActivityModal();
   }
 });
+
+function setSemesterProgress(startDateStr, endDateStr) {
+  const box = document.querySelector(".semester-progress-box");
+  if (!box) return;
+
+  const start = new Date(startDateStr).getTime();
+  const end = new Date(endDateStr).getTime();
+  const now = Date.now();
+
+  const pct = Math.max(0, Math.min(100, Math.round(((now - start) / (end - start)) * 100)));
+
+  const fill = box.querySelector(".semester-progress-fill");
+  const valueEl = box.querySelector(".semester-progress-value");
+  const track = box.querySelector(".semester-progress-track");
+  const subtext = box.querySelector(".semester-progress-subtext");
+
+  if (fill) fill.style.width = `${pct}%`;
+  if (valueEl) valueEl.textContent = `${pct}%`;
+  if (track) track.setAttribute("aria-valuenow", String(pct));
+  if (subtext) subtext.textContent = `${100 - pct}% remaining until the 1st semester ends`;
+}
+
+function parseLocalDate(dateStr) {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function updateSemesterProgress() {
+  const box = document.querySelector(".semester-progress-box");
+  if (!box) return;
+
+  const startStr = box.dataset.start || "2026-07-20";
+  const endStr = box.dataset.end || "2026-11-27";
+
+  const startDate = parseLocalDate(startStr);
+  const endDate = parseLocalDate(endStr);
+
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const totalDays = Math.max(1, Math.round((endDate - startDate) / msPerDay));
+  const elapsedDays = Math.round((today - startDate) / msPerDay);
+
+  const rawPct = (elapsedDays / totalDays) * 100;
+  const pct = Math.max(0, Math.min(100, Math.round(rawPct)));
+  const daysRemaining = Math.max(0, Math.round((endDate - today) / msPerDay));
+
+  const fill = box.querySelector(".semester-progress-fill");
+  const valueEl = box.querySelector(".semester-progress-value");
+  const track = box.querySelector(".semester-progress-track");
+  const subtext = box.querySelector(".semester-progress-subtext");
+
+  if (fill) fill.style.width = `${pct}%`;
+  if (valueEl) valueEl.textContent = `${pct}%`;
+  if (track) track.setAttribute("aria-valuenow", String(pct));
+  if (subtext) {
+    if (today < startDate) {
+      subtext.textContent = `Starts Jul 20, 2026 · Ends Nov 27, 2026`;
+    } else if (today >= endDate) {
+      subtext.textContent = `1st semester completed (Jul 20 – Nov 27, 2026)`;
+    } else {
+      subtext.textContent = `${100 - pct}% left (${daysRemaining} ${daysRemaining === 1 ? "day" : "days"} until Nov 27, 2026)`;
+    }
+  }
+}
+
+updateSemesterProgress();
