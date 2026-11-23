@@ -5,7 +5,7 @@
     <script src="Months/calendar.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -40,15 +40,36 @@
             </div>
         </div>
 
-        <div class="details-of-calendar">
-            <div class="legend">
-                <span class="calendar-detail-titles">Legend</span>
-            </div>
-            <div class="monthly-overview">
-                <span class="calendar-detail-titles">Monthly Overview</span>
-            </div>
-
+<div class="details-of-calendar">
+    <div class="calendar-summary-card">
+        <div class="summary-section legend-section">
+            <span class="calendar-detail-titles">Legend</span>
+            <ul class="legend-list">
+                <li><span class="legend-swatch swatch-activity"></span> Scheduled Activity</li>
+                <li><span class="legend-swatch swatch-semester"></span> Semester Marker</li>
+                <li><span class="legend-swatch swatch-day"></span> Regular Day</li>
+            </ul>
         </div>
+
+        <div class="semester-progress-box" data-start="2026-07-20" data-end="2026-11-27">
+            <div class="semester-progress-header">
+                <span class="semester-progress-title">1st Semester Progress Bar</span>
+                <span class="semester-progress-value">0%</span>
+            </div>
+            <div
+                class="semester-progress-track"
+                role="progressbar"
+                aria-label="1st Semester Progress Bar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div class="semester-progress-fill" style="width: 0%;"></div>
+            </div>
+            <p class="semester-progress-subtext">Jul 20, 2026 – Nov 27, 2026</p>
+        </div>
+    </div>
+</div>
 
     </div>
     <div class="announcement-board">
@@ -56,6 +77,38 @@
             <span>Announcements</span>
         </div>
         <div class="announcement-content">
+            <article class="announcement-item is-urgent">
+                <div class="announcement-meta">
+                    <span class="announcement-badge badge-urgent">Important</span>
+                    <time class="announcement-date" datetime="2026-11-23">November 20, 2026</time>
+                </div>
+                <h3 class="announcement-item-title">Clearance Signing</h3>
+                <p class="announcement-item-body">
+                Please be reminded to complete your Faculty Evaluation via GC-Lamp on or before November 27, 2026. Proof of completion is required prior to the Clearance Signing for the 1st semester.
+                </p>
+            </article>
+
+            <article class="announcement-item">
+                <div class="announcement-meta">
+                    <span class="announcement-badge badge-event">Event</span>
+                    <time class="announcement-date" datetime="2026-11-20">October 14, 2026</time>
+                </div>
+                <h3 class="announcement-item-title">SumoBot Competition</h3>
+                <p class="announcement-item-body">
+                Please be reminded of the upcoming Sumobot Showdown. Further details regarding the schedule, venue, and guidelines will be announced soon.
+                 </p>
+            </article>
+
+            <article class="announcement-item">
+                <div class="announcement-meta">
+                    <span class="announcement-badge badge-general">General</span>
+                    <time class="announcement-date" datetime="2026-11-16">Nov 16, 2026</time>
+                </div>
+                <h3 class="announcement-item-title">2nd Semester Enrollment Advisory</h3>
+                <p class="announcement-item-body">
+                Pre-advising and subject enlistment details for the 2nd Semester will be posted here right after final grades are encoded.
+                </p>
+            </article>
         </div>
     </div>
 </div>
