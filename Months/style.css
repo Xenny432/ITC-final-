@@ -1865,3 +1865,91 @@ body:not(:has(.month)) .title h1 {
     padding: 10px 12px;
   }
 }
+
+/* semester marker */
+.days button.semester-marker {
+  background-color: #3e7b86 !important;
+  color: #fffaf5 !important;
+  border-color: #2a5b64 !important;
+  box-shadow: 0.22rem 0.35rem 0.55rem rgba(42, 91, 100, 0.28);
+}
+
+.days button.semester-marker:hover,
+.days button.semester-marker:focus-visible {
+  background-color: #326670 !important;
+  color: #ffffff !important;
+  border-color: #1f444b !important;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0.3rem 0.5rem 0.75rem rgba(42, 91, 100, 0.36);
+}
+
+.days button.semester-marker.selected,
+.days button.semester-marker[aria-pressed="true"] {
+  background-color: #2e646e !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 2px #ffe4c8, 0 0 0 4px #3e7b86, 0.3rem 0.45rem 0.7rem rgba(42, 91, 100, 0.32);
+}
+
+/* fix ease in main page */
+@media (min-width: 601px) {
+  .opening-content {
+    max-width: 96vw;
+  }
+
+  .opening-content p {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(16px, 1.55vw, 22px);
+  }
+}
+
+/* fit main page*/
+@media (min-width: 601px) {
+  body:has(#homepage) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  #homepage {
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .opening-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .opening-content h1 {
+    margin: 0 auto 14px;
+    font-size: clamp(48px, 7.5vw, 88px);
+    text-align: center;
+  }
+
+  .opening-content p {
+    width: auto;
+    max-width: none;
+    white-space: nowrap;
+    margin: 0 auto 30px;
+    font-size: clamp(17px, 1.5vw, 22px);
+    text-align: center;
+  }
+
+  .opening-content .enter-btn {
+    margin: 0 auto;
+  }
+}
