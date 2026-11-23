@@ -37,7 +37,7 @@ function ensureBackToContentButton() {
   backLink.href = "../content.html";
   backLink.className = "back-content-btn";
   backLink.setAttribute("aria-label", "Back to home page");
-  backLink.innerHTML = "&#8592; Home Page";
+  backLink.innerHTML = "&#8592; Home";
 
   titleBar.prepend(backLink);
 }

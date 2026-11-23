@@ -1327,7 +1327,7 @@ body:has(.month),
     0 6px 14px rgba(56, 32, 14, 0.28);
 }
 
-/* Keep ← Home Page crisp and easy to read */
+/* home page */
 .back-content-btn {
   color: #38200e !important;
   background-color: #ffe4c8 !important;
